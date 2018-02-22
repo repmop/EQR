@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flask app</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1 class="logo">Sigh</h1>
+        <strong><nav>
+        </nav></strong>
+      </div>
+    </header>
+    <div class="container">
+      {% block content %}
+      {% endblock %}
+    </div>
+    <form action = "http://192.168.128.40:5000/handle" method = "POST">
+        Text to be Memeified:<br>
+        <input type="text" name="input"><br>
+        <input type="submit" value="submit">
+    </form>
+  </body>
